@@ -1,0 +1,76 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.sidebar {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.sidebar h1 {
+  font-size: 1.5rem;
+  margin: 1rem;
+  color: #2c3e50;
+}
+
+.sidebar h2 {
+  font-size: 1.2rem;
+  margin: 0.5rem 1rem;
+  color: #34495e;
+}
+
+.log-container {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.iss-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.iss-table th,
+.iss-table td {
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.iss-table th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.iss-table tr:hover {
+  background-color: #f1f3f5;
+  cursor: pointer;
+}
+
+.map-container {
+  height: 100%;
+  width: 70%;
+}
+
+.iss-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
