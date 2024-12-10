@@ -17,7 +17,8 @@ html, body, #root {
   width: 30%;
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  background-color: #010101;
+  color: white;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
@@ -25,13 +26,13 @@ html, body, #root {
 .sidebar h1 {
   font-size: 1.5rem;
   margin: 1rem;
-  color: #2c3e50;
+  color: #ecf0f1;
 }
 
 .sidebar h2 {
   font-size: 1.2rem;
   margin: 0.5rem 1rem;
-  color: #34495e;
+  color: #ecf0f1;
 }
 
 .log-container {
@@ -52,14 +53,19 @@ html, body, #root {
 }
 
 .iss-table th {
-  background-color: #f8f9fa;
+  background-color: #010101;
   font-weight: bold;
-  color: #2c3e50;
+  color: #ecf0f1;
 }
 
 .iss-table tr:hover {
-  background-color: #f1f3f5;
+  background-color: #34495e;
   cursor: pointer;
+}
+
+.iss-table tr.selected {
+  background-color: #34495e;
+  font-weight: bold;
 }
 
 .map-container {

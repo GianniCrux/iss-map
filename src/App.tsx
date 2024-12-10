@@ -16,6 +16,7 @@ function App() {
   const viewRefInstance = useRef<SceneView | null>(null);
   const highlightRef = useRef<__esri.Handle | null>(null);
   const historicalPositionsLayerRef = useRef<GraphicsLayer | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const [issData, setIssData] = useState<Array<{
     latitude: string | null;
@@ -48,7 +49,7 @@ function App() {
     if (!viewEl) return;
 
     const map = new Map({
-      basemap: "topo-vector",
+      basemap: "streets-night-vector",
     });
 
     const view = new SceneView({
@@ -126,6 +127,7 @@ function App() {
   }, [issData])
   
   const handleHighlight = (index: number) => {
+    setSelectedIndex(index);
     const view = viewRefInstance.current;
     const graphicsLayer = graphicsLayerRef.current;
     const historicalPositionsLayer = historicalPositionsLayerRef.current;
@@ -201,7 +203,7 @@ function App() {
       <tbody>
         {
           issData.map((position, index) => (
-            <tr key={index} onClick={() => handleHighlight(index)} style={{ cursor: 'pointer'}} >
+            <tr key={index} onClick={() => handleHighlight(index)} className={selectedIndex === index ? 'selected' : ''} >
               <td>
                 <img src="./iss.png" alt="Iss" className="iss-icon"/>
                 {position.latitude}</td>
